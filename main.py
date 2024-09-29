@@ -12,3 +12,8 @@ class Jeu:
     """
     self.k = rd.randint(0, m)
     self.n = n
+
+
+if __name__ == '__main__':
+  import doctest
+  doctest.testmod()
