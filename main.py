@@ -33,9 +33,31 @@ class Jeu:
       print("Bravo tu as gagne")
     return True
 
+  def jouer(self):
+    """
+    Fais une boucle jusqu'a ce que le nombre essais soit atteint
+
+    Fait une boucle tant que le joueur n'a pas trouvé le bon nombre
+
+    Returns:
+      Bool: En fonction de test()
+    """
+    n = 0
+    while n != self.n:
+      try:
+        k = int(input("Entre un nombre : "))
+        self.test(k)
+        n += 1
+        print(f"Il vous reste {self.n - n} essais")
+      except ValueError:
+        print("ceci n'est pas un entier")
+
+    print("Tu as perdu, plus d'essais disponible")
 
 
 
 if __name__ == '__main__':
   import doctest
   doctest.testmod()
+  jeu = Jeu(10,2)
+  jeu.jouer()
